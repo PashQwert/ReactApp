@@ -38,11 +38,8 @@ class Counter extends React.Component<any, any>{
         this.state = { count: props.count };
     }
     
-    handleIncrement = () => {
-        this.setState({ count: this.state.count + 1 });
-    }
-    handleDecriment = () => {
-        this.setState({ count: this.state.count - 1 });
+    handleAdd = (value: number) => {
+        this.setState({ count: this.state.count + value });
     }
 
     render() {
@@ -52,20 +49,20 @@ class Counter extends React.Component<any, any>{
                     React.createElement(
                         'p',
                         {className: 'label'},
-                        'Count: ',this.state.count
+                        `Count: ${this.state.count}`
                     )
                 }
                 {
                     React.createElement(
                         'button',
-                        {className: 'button', onClick:this.handleIncrement},
+                        {className: 'button', onClick:() => this.handleAdd(+1)},
                         'Increment'
                     )
                 }
                 {
                     React.createElement(
                         'button',
-                        {className: 'button', onClick:this.handleDecriment},
+                        {className: 'button', onClick:() => this.handleAdd(-1)},
                         'Decriment'
                     )
                 }
