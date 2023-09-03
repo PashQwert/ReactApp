@@ -1,13 +1,10 @@
 import React from 'react';
-import { useState } from 'react';
 import './Counter.css';
 /*
 const TextEdit = React.createElement(
     'input',
     {className: 'textEdit', defaultValue: 12}
 )
-
-//const [count, setCount] = useState(0);
 
 function handleClick (value:number) {
     console.log(value);
@@ -38,7 +35,7 @@ class Counter extends React.Component<any, any>{
         this.state = { count: props.count };
     }
     
-    handleAdd = (value: number) => {
+    handleAdd(value: number) {
         this.setState({ count: this.state.count + value });
     }
 
