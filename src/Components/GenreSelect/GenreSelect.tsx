@@ -1,17 +1,17 @@
 import React from "react";
 import './GenreSelect.css';
 
-function GenreSelect ({genres=[{id:0, title:''}], selectedGenre=0, onSelect=(id:number, title:string):void=>{}}){  
-  function handleGenreClick(id:number, title: string){
-    onSelect(id,title);
+function GenreSelect ({genres=[''], selectedGenre='', onSelect=(genre:string):void=>{}}){  
+  function handleGenreClick(genre: string){
+    onSelect(genre);
   }
 
   const listItems = genres.map(genre =>
     <li className="tab"
-      key={genre.id} 
-      onClick={() => handleGenreClick(genre.id, genre.title)}>
-      {genre.title}
-      <div style={{border: genre.id === selectedGenre ?'2px solid #F65261' : 'none'}}></div>
+      key={genre} 
+      onClick={() => handleGenreClick(genre)}>
+      {genre}
+      <div style={{border: genre === selectedGenre ?'2px solid #F65261' : 'none'}}></div>
     </li>
   );
 

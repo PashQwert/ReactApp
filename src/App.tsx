@@ -6,24 +6,21 @@ import Counter from './Components/Counter';
 import GenreSelect from './Components/GenreSelect';
 import SearchForm from './Components/SearchForm';
 
-const genres = [
-  { title: 'All', id: 0 },
-  { title: 'Documentary', id: 1 },
-  { title: 'Comedy', id: 2 },
-  { title: 'Horror', id: 3 },
-  { title: 'Crime', id: 4 },
-];
+const genres = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
 
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState(0)
+  const [selectedGenre, setSelectedGenre] = useState('All')
 
   const handleStartSearch = (s:string):void => {
     console.log(`String for search: ${s}`);
+    if(s.trimStart().length > 0){
+      alert(`The searched text "${s.trim()}" was not found.`)
+    }
   }
   
-  const handleGenreChange = (id:number, title:string):void => {  
-    console.log(`String for search: ${title}`);
-    setSelectedGenre(id);
+  const handleGenreChange = (genre:string):void => {  
+    console.log(`String for search: ${genre}`);
+    setSelectedGenre(genre);
   }
 
   return (
@@ -31,9 +28,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter count={10}/>
-        <br/>
         <SearchForm initialSearchString='some text to search' onSearch={handleStartSearch}/>
-        <br/>
         <GenreSelect genres={genres} selectedGenre={selectedGenre} onSelect={handleGenreChange}/>
       </header>
     </div>
