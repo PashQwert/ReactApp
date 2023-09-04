@@ -33,3 +33,6 @@ li{
     height: 1px;   
     background: #080707;
 }
+.selectedItem{
+    border: 2px solid #F65261;
+}

@@ -11,7 +11,7 @@ function GenreSelect ({genres=[''], selectedGenre='', onSelect=(genre:string):vo
       key={genre} 
       onClick={() => handleGenreClick(genre)}>
       {genre}
-      <div style={{border: genre === selectedGenre ?'2px solid #F65261' : 'none'}}></div>
+      <div className={genre === selectedGenre ? 'selectedItem' : ''}></div>
     </li>
   );
 
