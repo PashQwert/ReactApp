@@ -3,8 +3,12 @@ import './SearchForm.css';
 
 const defValue = 'What do you want to watch?'
 
-//function SearchForm(props:any): JSX.Element {
-function SearchForm({initialSearchString='', onSearch=(s:string):void=>{}}): JSX.Element {
+interface SearchFormProps {
+    initialSearchString: string;
+    onSearch: (s: string) => void;
+}
+
+function SearchForm({initialSearchString, onSearch}:SearchFormProps): JSX.Element {
     const [searchString, setSearchString] = useState(initialSearchString);
 
     function handleSearchButtonClick() {
