@@ -1,0 +1,33 @@
+.searchInput{
+    width: 713px;
+    height: 57px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    opacity: 0.7;
+    background: #323232CC;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.searchButton{
+    width: 233px;
+    height: 57px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #F65261;
+    margin-left: 20px;
+
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
