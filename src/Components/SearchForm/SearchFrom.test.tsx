@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent  } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 import SearchForm from './SearchForm';
 import { keyboard } from '@testing-library/user-event/dist/keyboard';
@@ -16,7 +16,9 @@ test('Test that component renders an input with the value equal to initial value
 
 test('Test that after typing to the input and a "click" event on the Submit button, the "onChange" prop is called with proper value', () => {
     render(<SearchForm initialSearchString={initialSearchString} onSearch={onSearch}/>);
-    userEvent.type(screen.getByRole("textbox"), "JavaScript");
+    act(() => {
+        userEvent.type(screen.getByRole("textbox"), "JavaScript");
+    });
     fireEvent.click(screen.getByRole("button"));
 
     expect(onSearch).toHaveBeenCalledTimes(1);
@@ -24,8 +26,9 @@ test('Test that after typing to the input and a "click" event on the Submit butt
 
 test('Test that after typing to the input and pressing Enter key, the "onChange" prop is called with proper value', () => {
     render(<SearchForm initialSearchString={initialSearchString} onSearch={onSearch}/>);
-    const input = screen.getByRole("textbox");
-    userEvent.type(input, "JavaScript{enter}");
+    act(() => {
+        userEvent.type(screen.getByRole("textbox"), "JavaScript{enter}");
+    });
 
     expect(onSearch).toHaveBeenCalledTimes(1);
 });
