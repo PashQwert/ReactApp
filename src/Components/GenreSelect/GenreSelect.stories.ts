@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import GenreSelect from './GenreSelect';
 import { within, userEvent } from '@storybook/testing-library';
-import { debug } from 'console';
 
 const genres = ['Genre 1','Genre 2','Genre 3'];
 

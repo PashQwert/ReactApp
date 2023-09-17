@@ -1,0 +1,42 @@
+.selectLabel{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.889px;
+    text-transform: uppercase;
+
+    opacity: 0.6;
+    margin-right: 30px;
+}
+
+.selectControl{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.889px;
+    text-transform: uppercase;
+
+    border: none;
+    background-color: inherit;
+}
+
+.selectControl option{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.889px;
+    text-transform: uppercase;
+
+    border: none;
+    background-color: #232323;
+    opacity: 0.6;
+}

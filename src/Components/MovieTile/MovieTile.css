@@ -1,6 +1,8 @@
 .movieTile{
     border: 1px solid #a24040;
     padding: 10px;
+    
+    cursor: pointer;
 }
 
 .movieImage{

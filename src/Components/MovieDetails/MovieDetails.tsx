@@ -1,9 +1,5 @@
 import React from "react";
 import './MovieDetails.css';
-/*
-The component should take properties to receive image url, movie name, release year, rating, duration and a description. 
-Alternatively,  you can specify a single property that accepts an object with all movie info.
-*/
 
 export interface MovieInfo{
     imageUrl: string,
