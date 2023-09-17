@@ -45,20 +45,5 @@ export const ChangeSelection: Story = {
 
         const firstOption = await canvas.getByDisplayValue(options[0]);
         fireEvent.change(firstOption, { target: { value: options[1] } });
-
-        //const firstOption = await canvas.getByDisplayValue(options[0]);
-        //console.log(firstOption);
-        //await userEvent.click(firstOption);
-        /*
-        const firstOption = await canvas.getByText(options[0]);
-        await userEvent.click(firstOption);
-        
-        console.log(firstOption);
-        
-        const secondOption = await canvas.getByText(options[1]);
-        await userEvent.click(secondOption);
-        
-        console.log(firstOption);
-        */
     }
 }
