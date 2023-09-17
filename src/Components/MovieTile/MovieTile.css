@@ -1,0 +1,64 @@
+.movieTile{
+    border: 1px solid #a24040;
+    padding: 10px;
+}
+
+.movieImage{
+    width: 100%;
+    flex-shrink: 0;
+    border: 1px solid #44aa68;
+}
+
+.movieName{
+    float: left;    
+    width: 50%;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    opacity: 0.7;
+    
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid #44aa68;
+}
+
+.releaseYear{
+    float: right;
+    border: 1px solid #E4E4E4;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+
+    width: 50px;
+
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    opacity: 0.7;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.relevantGenres{
+    float: left;    
+    width: 100%;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    opacity: 0.5;
+    text-align: left;
+    border: 1px solid #44aa68;
+    /*clear: both;*/
+}
