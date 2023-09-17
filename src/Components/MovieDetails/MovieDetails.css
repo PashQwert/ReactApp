@@ -1,0 +1,94 @@
+.detailsImage{
+    float: left;
+    width: 30%;
+}
+
+.detailsName{
+    float: left;
+    height: 50px;
+    padding: 10px 10px 0px 10px;
+    
+    color: #FFF;
+    text-align: left;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.detailsRating{
+    float: left;
+    padding: 10px;
+    margin: 10px;
+    
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+
+    
+    border: 1px solid #FFF;
+    border-radius: 30px;
+}
+
+.detailsGenres{
+    float: left;
+    width: 65%;
+    padding: 0px 10px 10px 10px;
+    
+    color: #FFF;
+    text-align: left;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    opacity: 0.5;
+}
+
+.detailsYear{
+    float: left;
+    width: 100px;
+    padding: 10px;
+
+    color: #F65261;    
+    text-align: left;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.detailsDuration{
+    float: left;
+    padding: 10px;
+
+    color: #F65261;
+    text-align: left;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.detailsDescription{
+    float: left;
+    width: 60%;
+    padding: 10px;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
