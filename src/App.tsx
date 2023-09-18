@@ -30,14 +30,13 @@ function App() {
     setSelectedGenre(genre);
   }
 
-  const handleMovieTileClick = (movieName:string):void => {  
+  const handleMovieTileClick = (movieName:string) => {  
     console.log(`Click on movie: ${movieName}`);
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <MovieTile movieInfo={movie1} onClick={handleMovieTileClick}/>
         <Counter count={10}/>
         <SearchForm initialSearchString='some text to search' onSearch={handleStartSearch}/>
