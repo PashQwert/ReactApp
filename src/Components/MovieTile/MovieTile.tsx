@@ -13,7 +13,7 @@ interface MovieTileProps {
     onClick: (movieName: string) => void
 }
 
-function  MovieTile({movieInfo, onClick}:MovieTileProps): JSX.Element {
+function  MovieTile({movieInfo, onClick}:MovieTileProps): React.ReactElement {
     return <div className="movieTile" onClick={() => onClick(movieInfo.movieName)}>
         <img className="movieImage" src={movieInfo.imageUrl} alt={movieInfo.movieName} />
         <label className="movieName">{movieInfo.movieName}</label>

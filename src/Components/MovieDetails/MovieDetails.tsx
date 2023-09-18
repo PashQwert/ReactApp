@@ -15,19 +15,19 @@ interface MovieDetailsProps {
     movieInfo: MovieInfo
 }
 
-function  MovieDetails({movieInfo}:MovieDetailsProps): JSX.Element {
-    return <>
+function  MovieDetails({movieInfo}:MovieDetailsProps): React.ReactElement {
+    return <div className="movieDetails">
         <img className="detailsImage" src={movieInfo.imageUrl} alt={movieInfo.movieName} />
-        <label className="detailsName">{movieInfo.movieName}</label>
-        <label className="detailsRating">{movieInfo.rating}</label>
+        <div className="detailsName">{movieInfo.movieName}</div>
+        <div className="detailsRating">{movieInfo.rating}</div>
 
-        <label className="detailsGenres">{movieInfo.relevantGenres.join(', ')}</label>
+        <div className="detailsGenres">{movieInfo.relevantGenres.join(', ')}</div>
 
-        <label className="detailsYear">{movieInfo.releaseYear}</label>
-        <label className="detailsDuration">{`${movieInfo.duration/60|0}h ${movieInfo.duration%60}m`}</label>
+        <div className="detailsYear">{movieInfo.releaseYear}</div>
+        <div className="detailsDuration">{`${movieInfo.duration/60|0}h ${movieInfo.duration%60}m`}</div>
 
-        <label className="detailsDescription">{movieInfo.description}</label>
-    </>;
+        <p className="detailsDescription">{movieInfo.description}</p>
+    </div>;
 }
 
 export default MovieDetails;

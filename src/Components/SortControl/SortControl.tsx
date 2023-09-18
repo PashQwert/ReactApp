@@ -6,7 +6,7 @@ interface SortControlProps {
     onChange: (s:string) => void
 }
 
-function  SortControl({currentSelection, onChange}:SortControlProps): JSX.Element {    
+function  SortControl({currentSelection, onChange}:SortControlProps): React.ReactElement {    
     function handleOnChange(event:ChangeEvent<HTMLSelectElement>) {
         //console.log('input changed');
         onChange(event.currentTarget.value);

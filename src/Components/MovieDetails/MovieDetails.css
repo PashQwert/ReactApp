@@ -1,3 +1,7 @@
+.movieDetails::after{
+    clear: both;
+}
+
 .detailsImage{
     float: left;
     width: 30%;

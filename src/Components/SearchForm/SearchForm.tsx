@@ -8,7 +8,7 @@ interface SearchFormProps {
     onSearch: (s: string) => void;
 }
 
-function SearchForm({initialSearchString, onSearch}:SearchFormProps): JSX.Element {
+const SearchForm = ({initialSearchString, onSearch}:SearchFormProps): React.ReactElement => {
     const [searchString, setSearchString] = useState(initialSearchString);
 
     function handleSearchButtonClick() {

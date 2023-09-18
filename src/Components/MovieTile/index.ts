@@ -1,4 +1,4 @@
-import MovieTile from './MovieTile';
-export * from './MovieTile';
+import MovieTile, { MovieInfo } from './MovieTile';
 
 export default MovieTile;
+export type {MovieInfo};
