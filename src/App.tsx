@@ -6,6 +6,7 @@ import Counter from './Components/Counter';
 import GenreSelect from './Components/GenreSelect';
 import SearchForm from './Components/SearchForm';
 import MovieTile, {MovieInfo} from './Components/MovieTile';
+import Dialog from './Components/Dialog';
 
 const genres = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
 const movie1: MovieInfo = {
@@ -37,6 +38,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Dialog title='Hi modal' onClose={() => {}}>
+          <div>Some content of dialog.</div>
+        </Dialog>
         <MovieTile movieInfo={movie1} onClick={handleMovieTileClick}/>
         <Counter count={10}/>
         <SearchForm initialSearchString='some text to search' onSearch={handleStartSearch}/>
