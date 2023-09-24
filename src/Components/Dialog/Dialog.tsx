@@ -1,6 +1,8 @@
 import React, { PropsWithChildren} from "react";
 import { useState } from 'react';
-import { createPortal } from 'react-dom';
+// @ts-ignore
+import { Portal } from 'react-portal';
+import FocusTrap from "focus-trap-react";
 import './Dialog.css';
 
 interface DialogProps{
@@ -10,20 +12,26 @@ interface DialogProps{
 
 const Dialog = (props:PropsWithChildren<DialogProps>):React.ReactElement => {    
     const [showModal, setShowModal] = useState(false);  
-    const ModalContent = ({title,onClose}:DialogProps) => <div className="dialogBox"> 
+    const ModalContent = ({title,onClose}:DialogProps) => <FocusTrap focusTrapOptions={{
+        fallbackFocus: "#dialogCloseButton",
+        clickOutsideDeactivates: true,
+        returnFocusOnDeactivate: true,
+    }}>
+    <div className="dialogBox"> 
         <div className="dialogTitle">{props.title}</div>   
-        <input className="dialogCloseButton" type="button" onClick={onClose} value="X"/> 
-        <div className="dialogChildren">{props.children}</div>       
-    </div>;  
+        <input className="dialogCloseButton" type="button" onClick={onClose} value="X" id="dialogCloseButton" tabIndex={-1}/> 
+        <div className="dialogChildren">{props.children}</div> 
+    </div></FocusTrap>;  
     return (<>
         <button onClick={() => setShowModal(true)}>
             Show modal using a portal
         </button>
         
-        {showModal && createPortal(
-            <ModalContent title={props.title} onClose={() => setShowModal(false)} />,
-            document.body
-        )}
+        {showModal &&         
+            <Portal>
+                <ModalContent title={props.title} onClose={() => setShowModal(false)} />
+            </Portal>
+        }
       </>
     )
 }
