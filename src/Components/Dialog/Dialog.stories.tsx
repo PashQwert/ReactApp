@@ -17,10 +17,10 @@ const meta: Meta<typeof Dialog> = {
     tags: ['autodocs'],
     argTypes: {
         title: string,
-        children: MovieForm,//{ control: 'text' } ,
+        children: { control: 'text' } ,
         onClose: () => {}
     }
-};// satisfies Meta<typeof Dialog>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -73,7 +73,7 @@ export const DeleteMovie: Story = {
     },
 };
 
-//attempt to use story
+//attempt to use ShowEmptyForm and ShowFilledForm stories
 export const AddMovie2: Story = {
     args: {
         title: "Add movie",
