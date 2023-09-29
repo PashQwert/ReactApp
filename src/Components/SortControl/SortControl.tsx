@@ -15,8 +15,8 @@ function  SortControl({currentSelection, onChange}:SortControlProps): React.Reac
     return <>
         <label className="selectLabel" htmlFor="selectControl">Sort by</label>
         <select className="selectControl" name="selectControl" id="selectControl" onChange={handleOnChange}>
-            <option value="Release Date">Release Date</option>
-            <option value="Title">Title</option>
+            <option value="Release Date" key="Release Date">Release Date</option>
+            <option value="Title" key="Title">Title</option>
         </select>
     </>;
 }
