@@ -16,9 +16,9 @@ interface MovieTileProps {
 function  MovieTile({movieInfo, onClick}:MovieTileProps): React.ReactElement {
     return <div className="movieTile" onClick={() => onClick(movieInfo.movieName)}>
         <img className="movieImage" src={movieInfo.imageUrl} alt={movieInfo.movieName} />
-        <label className="movieName">{movieInfo.movieName}</label>
-        <label className="releaseYear">{movieInfo.releaseYear}</label>
-        <label className="relevantGenres">{movieInfo.relevantGenres.join(', ')}</label>
+        <div className="movieName">{movieInfo.movieName}</div>
+        <div className="releaseYear">{movieInfo.releaseYear}</div>
+        <div className="relevantGenres">{movieInfo.relevantGenres.join(', ')}</div>
     </div>;
 }
 

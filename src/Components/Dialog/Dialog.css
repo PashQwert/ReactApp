@@ -1,0 +1,50 @@
+.dialogBox{    
+    padding: 10px;
+    border: 1px solid #44aa68;
+
+    /*display: flex;*/
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    background: #232323;
+    border: 2px solid rgb(240, 240, 240);
+    border-radius: 12px;
+    position: absolute;
+    min-width: 250px;
+    top: 70px;
+    left: 70px;
+}
+
+.dialogTitle{    
+    float: left;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #44aa68;
+    
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.dialogChildren{   
+    clear: both; 
+    padding: 10px;
+    border: 1px solid #44aa68;
+    
+    color: #FFF;
+}
+
+.dialogCloseButton{  
+    float: right; 
+    width: 50px;
+    padding: 10px;
+    border: 1px solid #44aa68;
+    
+    background: #F65261;
+    color: #FFF;
+}
