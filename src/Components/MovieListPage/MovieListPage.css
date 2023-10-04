@@ -1,0 +1,22 @@
+.movieListPage_box{
+    width: 1100px;
+    border: 1px solid #44aa68;
+}
+
+.movieListPage_searchForm{
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid #44aa68;
+}
+
+.movieListPage_filterForm{
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid #44aa68;
+}
+
+.movieListPage_resultForm{
+    width: 100%;
+    min-height: 800px;
+    border: 1px solid #44aa68;
+}

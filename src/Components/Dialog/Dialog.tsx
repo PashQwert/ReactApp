@@ -29,7 +29,7 @@ const Dialog = (props:PropsWithChildren<DialogProps>):React.ReactElement => {
         
         {showModal &&         
             <Portal>
-                <ModalContent title={props.title} onClose={() => setShowModal(false)} />
+                <ModalContent title={props.title} onClose={() => {setShowModal(false); props.onClose();}} />
             </Portal>
         }
       </>
