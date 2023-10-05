@@ -29,7 +29,7 @@ const SearchForm = ({initialSearchString, onSearch}:SearchFormProps): React.Reac
     }
 
     return (
-        <p className="searchPanel">
+        <p className="searchForm_box">
             <input className="searchInput" placeholder={defValue} defaultValue={searchString} 
                 onKeyDown={handleInputKeyDown} 
                 onChange={handleInputChanged}/>

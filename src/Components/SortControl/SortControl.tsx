@@ -12,13 +12,13 @@ function  SortControl({currentSelection, onChange}:SortControlProps): React.Reac
         onChange(event.currentTarget.value);
     }
 
-    return <>
+    return <div className="sortControl_box">
         <label className="selectLabel" htmlFor="selectControl">Sort by</label>
         <select className="selectControl" name="selectControl" id="selectControl" onChange={handleOnChange}>
             <option value="Release Date" key="Release Date">Release Date</option>
             <option value="Title" key="Title">Title</option>
         </select>
-    </>;
+    </div>;
 }
 
 export default SortControl;

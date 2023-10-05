@@ -15,12 +15,12 @@ function GenreSelect ({genres=[''], selectedGenre='', onSelect=(genre:string):vo
     </li>
   );
 
-  return (<>    
+  return (<div className="genreSelect_box">    
     <ul className="tabs">{listItems}</ul>
-    <div className="line1"></div>
-    <div className="line2"></div>
-    </>
+    </div>
   )
+  // <div className="line1"></div>
+  // <div className="line2"></div>
 }
 
 export default GenreSelect;
