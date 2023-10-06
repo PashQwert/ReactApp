@@ -1,9 +1,9 @@
 .movieTile{
     float: left;
     width: 300px;
-    height: 400px;
+    height: 550px;
 
-    border: 1px solid #a24040;
+    /*border: 1px solid #a24040;*/
     padding: 10px;
     
     cursor: pointer;
@@ -12,12 +12,11 @@
 .movieImage{
     width: 100%;
     flex-shrink: 0;
-    border: 1px solid #44aa68;
 }
 
 .movieName{
     float: left;    
-    width: 50%;
+    width: auto;
 
     color: #FFF;
     font-family: Montserrat;
@@ -30,7 +29,6 @@
     
     margin-bottom: 10px;
     margin-top: 10px;
-    border: 1px solid #44aa68;
 }
 
 .releaseYear{
@@ -65,6 +63,4 @@
     line-height: normal;
     opacity: 0.5;
     text-align: left;
-    border: 1px solid #44aa68;
-    /*clear: both;*/
 }
