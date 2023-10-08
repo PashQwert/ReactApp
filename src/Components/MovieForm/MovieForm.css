@@ -26,9 +26,9 @@
     width: 100%;
 }
   
-label {
-    float: left;
-    width: 100%;
+.movieForm label {
+    /*float: left;
+    width: 100%;*/
     margin: 1em;
     padding-top: 1.5em;
 
@@ -44,7 +44,7 @@ label {
     opacity: 0.8;
 }
 
-label input {
+.movieForm label input {
     float: left;
     width: 100%;
     height: 57px;
@@ -64,7 +64,7 @@ label input {
     opacity: 0.3;
 }
 
-label select{
+.movieForm label select{
     float: left;
     width: 100%;
     height: 57px;
@@ -84,7 +84,7 @@ label select{
     opacity: 0.3;
 }
 
-textarea{
+.movieForm textarea{
     float: left;
     width: 90%;
     height: 197px;

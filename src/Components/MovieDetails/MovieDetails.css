@@ -1,5 +1,15 @@
+.movieDetails{
+    padding: 10px;
+}
+
 .movieDetails::after{
     clear: both;
+}
+
+.movieDetails_close{    
+    float: right;
+    cursor: pointer;
+    padding: 10px;
 }
 
 .detailsImage{

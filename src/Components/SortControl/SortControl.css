@@ -1,3 +1,13 @@
+.sortControl_box{
+    float: right;
+    display: flex;
+    flex-direction: row;
+    
+
+    justify-content: flex-start;
+    padding: 20px;
+}
+
 .selectLabel{
     color: #FFF;
     font-family: Montserrat;
@@ -18,7 +28,6 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: normal;
     letter-spacing: 0.889px;
     text-transform: uppercase;
 
@@ -26,7 +35,7 @@
     background-color: inherit;
 }
 
-.selectControl option{
+.selectControl option {
     color: #FFF;
     font-family: Montserrat;
     font-size: 16px;

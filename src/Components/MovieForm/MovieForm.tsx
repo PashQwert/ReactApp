@@ -54,10 +54,10 @@ const MovieForm = ({movieInfo, onSubmint}:MovieFormProps):React.ReactElement => 
         <label className="genre c-2-3">
             Genre
             <select name="genre" value={movieInfo?.relevantGenres}>                
-                <option value="Crime">Crime</option>
-                <option value="Documentrary">Documentrary</option>
-                <option value="Horror">Horror</option>
-                <option value="Comedy">Comedy</option>
+                <option value="Crime" key="Crime">Crime</option>
+                <option value="Documentrary" key="Documentrary">Documentrary</option>
+                <option value="Horror" key="Horror">Horror</option>
+                <option value="Comedy" key="Comedy">Comedy</option>
             </select>
         </label>
         <label className="runtime c-1-3">

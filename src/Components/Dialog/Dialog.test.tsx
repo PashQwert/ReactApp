@@ -16,7 +16,7 @@ test('Test that component renders Title passed in props', () => {
     expect(linkElement).toBeInTheDocument();
 });
 
-test('Test that component renders Title passed in props', () => {
+test('Test that component renders Children passed in props', () => {
     render(<Dialog title={title} onClose={onClose}>{children}</Dialog>);
         
     fireEvent.click(screen.getByRole("button"));

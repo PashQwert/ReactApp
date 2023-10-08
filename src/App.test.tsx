@@ -5,6 +5,6 @@ import App from './App';
 test('renders learn react link', () => {
   render(<App />);
   //screen.debug();
-  const linkElement = screen.getByText(/Count: 10/i);
+  const linkElement = screen.getByText(/Sort by/i);
   expect(linkElement).toBeInTheDocument();
 });
