@@ -7,6 +7,22 @@ export const useHttp = (url:URL, dependencies:React.DependencyList | undefined, 
   useEffect(() => {
     setIsLoading(true);
     console.log('Sending Http request to URL: ' + url);
+
+    const fetchData = async () => {
+      const data = await fetch(url);
+      const json = await data.json();
+      
+      setIsLoading(false);
+      setFetchedData(json);
+    }
+
+    fetchData()
+      .catch(err => {
+        console.log(err);
+        setIsLoading(false);
+    });
+
+    /*
     fetch(url, {signal})
       .then(response => {
         if (!response.ok) {
@@ -22,6 +38,7 @@ export const useHttp = (url:URL, dependencies:React.DependencyList | undefined, 
         console.log(err);
         setIsLoading(false);
       });
+    */
   }, dependencies);
 
   return [isLoading, fetchedData];

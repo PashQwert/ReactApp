@@ -90,7 +90,7 @@ const MovieListPage = ():React.ReactElement => {
 
     if (fetchedData) {
       const res = fetchedData as unknown as resp;
-      const data = res.data.map((x, index) => {
+      const data = res.data.filter((a, i) => res.data.findIndex((s) => a.title === s.title) === i).map((x, index) => {
         return {
           imageUrl: x.poster_path,
           movieName: x.title,
@@ -107,42 +107,6 @@ const MovieListPage = ():React.ReactElement => {
       movieList = data;
     }
 
-/*
-  useEffect(() => {
-    console.log('useEffect runs');
-    
-    const url = new URL(`http://localhost:4000/movies?limit=5&sortOrder=asc&searchBy=title`
-      +`&sortBy=${sortCriterion}&search=${searchQuery}&filter=${activeGenre === "All" ? "" : activeGenre}`);
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch.');
-        }
-        return response.json();
-      })
-      .then(data => {
-        const respo = data as resp;
-        
-        const ml = respo.data.map((x, index) => {
-          return {
-            imageUrl: x.poster_path,
-            movieName: x.title,
-            releaseYear: new Date(x.release_date).getFullYear(),
-            relevantGenres: x.genres,
-            duration: x.runtime,
-            rating: x.vote_average,
-            description: x.overview
-          } as MovieInfoForDetails;
-        });
-
-        setSelectedMovie(undefined);
-        setMovieList(ml);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    }, [searchQuery, sortCriterion, activeGenre]);
-*/
     return <div className='movieListPage_box'>
       <div className='movieListPage_searchForm'>
         {selectedMovie === undefined && <SearchForm initialSearchString={searchQuery} onSearch={handleSearch}/>}
