@@ -1,32 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './MovieListPage.css';
 
 import SearchForm from '../SearchForm';
 import GenreSelect from '../GenreSelect';
 import SortControl from '../SortControl';
-import MovieTile, { MovieInfo as MovieInfoForTile} from '../MovieTile';
+import MovieTile from '../MovieTile';
 import MovieDetails, { MovieInfo as MovieInfoForDetails } from '../MovieDetails';
 import Dialog from '../Dialog';
 
 import { useHttp } from '../../Hooks/http';
 
-import logo from '../../logo.svg';
-import image from '../MovieDetails/PulpFiction.png'
-
 const genres = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
-
-const movieDetails:Array<MovieInfoForDetails> = Array.from({length:5}).map((x, index) => {
-    return {
-      imageUrl: image,
-      movieName: 'Pulp Fiction ' + index,
-      releaseYear: 1994,
-      relevantGenres: ['Action & Adventure'],
-      duration: 154,
-      rating: 8.9,
-      description: 'Jules Winnfield (Samuel L. Jackson) and Vincent Vega (John Travolta) are two hit men who are out to retrieve a suitcase stolen from their employer, mob boss Marsellus Wallace (Ving Rhames). Wallace has also asked Vincent to take his wife Mia (Uma Thurman) out a few days later when Wallace himself will be out of town. Butch Coolidge (Bruce Willis) is an aging boxer who is paid by Wallace to lose his fight. The lives of these seemingly unrelated people are woven together comprising of a series of funny, bizarre and uncalled-for incidents.—Soumitra'
-    } as MovieInfoForDetails;
-  }
-);
 
 interface MovieInfo {
   budget: number,
@@ -54,20 +38,31 @@ const MovieListPage = ():React.ReactElement => {
     const [searchQuery, setSearchQuery] = useState("");    
     const [sortCriterion, setSortCriterion] = useState("Title");
     const [activeGenre, setActiveGenre] = useState("All");
-    const [movieList, setMovieList] = useState<Array<MovieInfoForDetails>>();
     const [selectedMovie, setSelectedMovie] = useState<string>();
+    const [controller, setController] = useState(new AbortController());    
+
+    const AbortRequest = () => { 
+      controller.abort();
+      setController(new AbortController());
+    }
 
     const handleSearch = (searchString:string) => {
+      AbortRequest();
+      setSelectedMovie(undefined);
       setSearchQuery(searchString);
       console.log(`searchQuery: ${searchString}`);
     }
 
     const handleSelectGenre = (genre:string) => {
+      AbortRequest();
+      setSelectedMovie(undefined);
       setActiveGenre(genre);
       console.log(`activeGenre: ${genre}`);
     }
 
     const handleSelectSortCriterion = (criterion:string) => {
+      AbortRequest();
+      setSelectedMovie(undefined);
       setSortCriterion(criterion);
       console.log(`sortCriterion: ${criterion}`);
     }
@@ -81,11 +76,17 @@ const MovieListPage = ():React.ReactElement => {
       console.log(`unselected movie: ${selectedMovie}`);
       setSelectedMovie(undefined);
     }
-/*
+
+    const url = new URL(`http://localhost:4000/movies?limit=5&sortOrder=asc&searchBy=title`
+      +`&sortBy=${sortCriterion}&search=${searchQuery}&filter=${activeGenre === "All" ? "" : activeGenre}`);
+
     const [isLoading, fetchedData] = useHttp(
-      new URL('http://localhost:4000/movies?limit=10'),
-      [searchQuery, sortCriterion, activeGenre]
+      new URL(url),
+      [searchQuery, sortCriterion, activeGenre],
+      controller.signal
     );
+
+    let movieList = undefined;
 
     if (fetchedData) {
       const res = fetchedData as unknown as resp;
@@ -102,10 +103,11 @@ const MovieListPage = ():React.ReactElement => {
       });
       console.log(data);
       
-      //setMovieList(data);
+      //setMovieList(data); ??? Infinity loop cicle
+      movieList = data;
     }
-*/
 
+/*
   useEffect(() => {
     console.log('useEffect runs');
     
@@ -140,7 +142,7 @@ const MovieListPage = ():React.ReactElement => {
         console.log(err);
       });
     }, [searchQuery, sortCriterion, activeGenre]);
-
+*/
     return <div className='movieListPage_box'>
       <div className='movieListPage_searchForm'>
         {selectedMovie === undefined && <SearchForm initialSearchString={searchQuery} onSearch={handleSearch}/>}
@@ -154,9 +156,9 @@ const MovieListPage = ():React.ReactElement => {
         { movieList && movieList.map(movie => <MovieTile movieInfo={movie} onClick={handleSelectMovie} key={movie.movieName}/>) }
       </div>
 
-      {selectedMovie !== undefined &&         
+      {selectedMovie !== undefined && movieList &&         
           <Dialog title={selectedMovie} onClose={handleCloseDetails}>
-            <MovieDetails movieInfo={movieDetails[0]}/>
+            <MovieDetails movieInfo={movieList.find(x => x.movieName === selectedMovie)!}/>
           </Dialog>
       }
     </div>

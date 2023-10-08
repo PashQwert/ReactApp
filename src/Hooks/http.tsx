@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
-export const useHttp = (url:URL, dependencies:React.DependencyList | undefined) => {
+export const useHttp = (url:URL, dependencies:React.DependencyList | undefined, signal:AbortSignal) => {
   const [isLoading, setIsLoading] = useState(false);
   const [fetchedData, setFetchedData] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
     console.log('Sending Http request to URL: ' + url);
-    fetch(url)
+    fetch(url, {signal})
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to fetch.');
